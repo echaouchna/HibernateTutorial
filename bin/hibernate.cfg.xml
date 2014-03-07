@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+<!--     Hibernate SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+<!--         Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/hibernatedb</property>
+        
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+<!--         Disable the second level cache -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        
+<!--         Show SQL queries -->
+        <property name="show_sql">true</property>
+        
+<!--         JDBC connection pool -->
+        <property name="connection.pool_size">1</property>
+
+<!-- 		Names the annotated entity class -->
+        <mapping class="org.example.dto.UserDetails"/>
+    </session-factory>
+</hibernate-configuration>
